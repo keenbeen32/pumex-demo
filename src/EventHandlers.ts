@@ -264,7 +264,7 @@ VoterV5.GaugeCreated.handler(async ({ event, context }) => {
     lastUpdatedBlock: BigInt(event.block.number),
   };
 
-  context.GaugeStats.set(gaugeStats);
+  context.GaugeStats.set(gaugeStats); 
 });
 
 VoterV5.GaugeKilled.handler(async ({ event, context }) => {
