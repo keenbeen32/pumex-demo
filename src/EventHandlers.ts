@@ -273,7 +273,7 @@ VoterV5.GaugeKilled.handler(async ({ event, context }) => {
     gauge: event.params.gauge,  
   };
 
-  context.VoterV5_GaugeKilled.set(entity);
+  context.VoterV5_GaugeKilled.set(entity); 
 
   const gaugeStats = await context.GaugeStats.get(event.params.gauge);
 
