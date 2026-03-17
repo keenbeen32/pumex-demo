@@ -1,0 +1,98 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 1776
+  start_block: 0
+  hypersync_config: 
+    url: https://1776.hypersync.xyz
+  contracts:
+  - name: MinterV2
+    address:
+    - 0xd85f8d357999D4a027c5359cD26812e3819b6a70
+    handler: src/EventHandlers.ts
+    events:
+    - event: Initialized(uint8 version)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+  - name: oPMX
+    address:
+    - 0xE45e76a61526fd63A15d15f43f7092B92b2c2b01
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 value)
+    - event: Exercise(address indexed sender, address indexed recipient, uint256 amount, uint256 paymentAmount)
+    - event: ExerciseLp(address indexed sender, address indexed recipient, uint256 amount, uint256 paymentAmount, uint256 lpAmount)
+    - event: ExerciseVe(address indexed sender, address indexed recipient, uint256 amount, uint256 paymentAmount, uint256 nftId)
+    - event: PauseStateChanged(bool isPaused)
+    - event: RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
+    - event: RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
+    - event: SetDiscount(uint256 discount)
+    - event: SetFeeDistributor(address indexed newFeeDistributor)
+    - event: SetGauge(address indexed newGauge)
+    - event: SetLockDurationForMaxLpDiscount(uint256 lockDurationForMaxLpDiscount)
+    - event: SetLockDurationForMinLpDiscount(uint256 lockDurationForMinLpDiscount)
+    - event: SetLockDurationForMinVeDiscount(uint256 lockDurationForMinVeDiscount)
+    - event: SetMaxLPDiscount(uint256 lpMaxDiscount)
+    - event: SetMinLPDiscount(uint256 lpMinDiscount)
+    - event: SetPaymentConfiguration(address indexed pair, address indexed twapOracle, address indexed paymentToken)
+    - event: SetRouter(address indexed router)
+    - event: SetTwapSeconds(uint32 twapSeconds)
+    - event: SetVeMaxDiscount(uint256 veMaxDiscount)
+    - event: SetVeMinDiscount(uint256 veMinDiscount)
+    - event: ToggleExternalOption(address option, bool enabled)
+    - event: Transfer(address indexed from, address indexed to, uint256 value)
+  - name: Vault
+    address:
+    - 0x8367cc5B351183f486E007DfEA712B909EdDCC12
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 value)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Transfer(address indexed from, address indexed to, uint256 value)
+  - name: PMX
+    address:
+    - 0x5d5D7Cb09d84024733A9433F54ceDe312ae52832
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 value)
+    - event: EIP712DomainChanged()
+    - event: OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Transfer(address indexed from, address indexed to, uint256 value)
+  - name: VoterV5
+    address:
+    - 0x0CC11A3F25870404f9481EEdCDcf1AFf90904BA9
+    handler: src/EventHandlers.ts
+    events:
+    - event: Abstained(address voter, uint256 weight)
+    - event: AddFactories(address indexed pairfactory, address indexed gaugefactory)
+    - event: Attach(address indexed owner, address indexed gauge, uint256 tokenId)
+    - event: Blacklisted(address indexed blacklister, address indexed token)
+    - event: BlacklistedPool(address indexed blacklister, address indexed pool)
+    - event: Detach(address indexed owner, address indexed gauge, uint256 tokenId)
+    - event: DistributeReward(address indexed sender, address indexed gauge, uint256 amount)
+    - event: FactoryDisabled(uint256 indexed gaugeType, address indexed pairFactory, address indexed gaugeFactory)
+    - event: FactoryEnabled(uint256 indexed gaugeType, address indexed pairFactory, address indexed gaugeFactory)
+    - event: FactoryReplaced(uint256 indexed gaugeType, address indexed oldPairFactory, address indexed oldGaugeFactory, address newPairFactory, address newGaugeFactory)
+    - event: GaugeCreated(address indexed gauge, address creator, address internal_bribe, address indexed external_bribe, address indexed pool)
+    - event: GaugeKilled(address indexed gauge)
+    - event: GaugeRevived(address indexed gauge)
+    - event: HitRefreshApprovalLimit(uint256 fromGaugeIndex, uint256 toGaugeIndex)
+    - event: Initialized(uint8 version)
+    - event: NotifyReward(address indexed sender, address indexed reward, uint256 amount)
+    - event: RefundReward(address indexed gauge, uint256 amount)
+    - event: SetBribeFactory(address indexed old, address indexed latest)
+    - event: SetBribeFor(bool isInternal, address indexed old, address indexed latest, address indexed gauge)
+    - event: SetDepositor(address indexed old, bool enabled)
+    - event: SetGaugeFactory(address indexed old, address indexed latest)
+    - event: SetGaugeLogic(address indexed old, address indexed latest)
+    - event: SetMinter(address indexed old, address indexed latest)
+    - event: SetOptions(address indexed old, address indexed latest)
+    - event: SetPairFactory(address indexed old, address indexed latest)
+    - event: SetPermissionRegistry(address indexed old, address indexed latest)
+    - event: SetVoteDelay(uint256 old, uint256 latest)
+    - event: Voted(address indexed voter, uint256 weight)
+    - event: Whitelisted(address indexed whitelister, address indexed token)
+    - event: WhitelistedPool(address indexed whitelister, address indexed pool)
+unordered_multichain_mode: true
+preload_handlers: true

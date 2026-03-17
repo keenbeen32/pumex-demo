@@ -1,0 +1,401 @@
+type GaugeStats {
+  id: ID!
+  pool: String!
+  creator: String!
+  isAlive: Boolean!
+  totalRewardsDistributed: BigInt!
+  createdAtBlock: BigInt!
+  lastUpdatedBlock: BigInt!
+}
+
+type MinterV2_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type MinterV2_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Vault_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type Vault_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type Vault_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
+
+type VoterV5_Abstained {
+  id: ID!
+  voter: String!
+  weight: BigInt!
+}
+
+type VoterV5_AddFactories {
+  id: ID!
+  pairfactory: String!
+  gaugefactory: String!
+}
+
+type VoterV5_Attach {
+  id: ID!
+  owner: String!
+  gauge: String!
+  tokenId: BigInt!
+}
+
+type VoterV5_Blacklisted {
+  id: ID!
+  blacklister: String!
+  token: String!
+}
+
+type VoterV5_BlacklistedPool {
+  id: ID!
+  blacklister: String!
+  pool: String!
+}
+
+type VoterV5_Detach {
+  id: ID!
+  owner: String!
+  gauge: String!
+  tokenId: BigInt!
+}
+
+type VoterV5_DistributeReward {
+  id: ID!
+  sender: String!
+  gauge: String!
+  amount: BigInt!
+}
+
+type VoterV5_FactoryDisabled {
+  id: ID!
+  gaugeType: BigInt!
+  pairFactory: String!
+  gaugeFactory: String!
+}
+
+type VoterV5_FactoryEnabled {
+  id: ID!
+  gaugeType: BigInt!
+  pairFactory: String!
+  gaugeFactory: String!
+}
+
+type VoterV5_FactoryReplaced {
+  id: ID!
+  gaugeType: BigInt!
+  oldPairFactory: String!
+  oldGaugeFactory: String!
+  newPairFactory: String!
+  newGaugeFactory: String!
+}
+
+type VoterV5_GaugeCreated {
+  id: ID!
+  gauge: String!
+  creator: String!
+  internal_bribe: String!
+  external_bribe: String!
+  pool: String!
+}
+
+type VoterV5_GaugeKilled {
+  id: ID!
+  gauge: String!
+}
+
+type VoterV5_GaugeRevived {
+  id: ID!
+  gauge: String!
+}
+
+type VoterV5_HitRefreshApprovalLimit {
+  id: ID!
+  fromGaugeIndex: BigInt!
+  toGaugeIndex: BigInt!
+}
+
+type VoterV5_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type VoterV5_NotifyReward {
+  id: ID!
+  sender: String!
+  reward: String!
+  amount: BigInt!
+}
+
+type VoterV5_RefundReward {
+  id: ID!
+  gauge: String!
+  amount: BigInt!
+}
+
+type VoterV5_SetBribeFactory {
+  id: ID!
+  old: String!
+  latest: String!
+}
+
+type VoterV5_SetBribeFor {
+  id: ID!
+  isInternal: Boolean!
+  old: String!
+  latest: String!
+  gauge: String!
+}
+
+type VoterV5_SetDepositor {
+  id: ID!
+  old: String!
+  enabled: Boolean!
+}
+
+type VoterV5_SetGaugeFactory {
+  id: ID!
+  old: String!
+  latest: String!
+}
+
+type VoterV5_SetGaugeLogic {
+  id: ID!
+  old: String!
+  latest: String!
+}
+
+type VoterV5_SetMinter {
+  id: ID!
+  old: String!
+  latest: String!
+}
+
+type VoterV5_SetOptions {
+  id: ID!
+  old: String!
+  latest: String!
+}
+
+type VoterV5_SetPairFactory {
+  id: ID!
+  old: String!
+  latest: String!
+}
+
+type VoterV5_SetPermissionRegistry {
+  id: ID!
+  old: String!
+  latest: String!
+}
+
+type VoterV5_SetVoteDelay {
+  id: ID!
+  old: BigInt!
+  latest: BigInt!
+}
+
+type VoterV5_Voted {
+  id: ID!
+  voter: String!
+  weight: BigInt!
+}
+
+type VoterV5_Whitelisted {
+  id: ID!
+  whitelister: String!
+  token: String!
+}
+
+type VoterV5_WhitelistedPool {
+  id: ID!
+  whitelister: String!
+  pool: String!
+}
+
+type OPMX_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type OPMX_Exercise {
+  id: ID!
+  sender: String!
+  recipient: String!
+  amount: BigInt!
+  paymentAmount: BigInt!
+}
+
+type OPMX_ExerciseLp {
+  id: ID!
+  sender: String!
+  recipient: String!
+  amount: BigInt!
+  paymentAmount: BigInt!
+  lpAmount: BigInt!
+}
+
+type OPMX_ExerciseVe {
+  id: ID!
+  sender: String!
+  recipient: String!
+  amount: BigInt!
+  paymentAmount: BigInt!
+  nftId: BigInt!
+}
+
+type OPMX_PauseStateChanged {
+  id: ID!
+  isPaused: Boolean!
+}
+
+type OPMX_RoleAdminChanged {
+  id: ID!
+  role: String!
+  previousAdminRole: String!
+  newAdminRole: String!
+}
+
+type OPMX_RoleGranted {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type OPMX_RoleRevoked {
+  id: ID!
+  role: String!
+  account: String!
+  sender: String!
+}
+
+type OPMX_SetDiscount {
+  id: ID!
+  discount: BigInt!
+}
+
+type OPMX_SetFeeDistributor {
+  id: ID!
+  newFeeDistributor: String!
+}
+
+type OPMX_SetGauge {
+  id: ID!
+  newGauge: String!
+}
+
+type OPMX_SetLockDurationForMaxLpDiscount {
+  id: ID!
+  lockDurationForMaxLpDiscount: BigInt!
+}
+
+type OPMX_SetLockDurationForMinLpDiscount {
+  id: ID!
+  lockDurationForMinLpDiscount: BigInt!
+}
+
+type OPMX_SetLockDurationForMinVeDiscount {
+  id: ID!
+  lockDurationForMinVeDiscount: BigInt!
+}
+
+type OPMX_SetMaxLPDiscount {
+  id: ID!
+  lpMaxDiscount: BigInt!
+}
+
+type OPMX_SetMinLPDiscount {
+  id: ID!
+  lpMinDiscount: BigInt!
+}
+
+type OPMX_SetPaymentConfiguration {
+  id: ID!
+  pair: String!
+  twapOracle: String!
+  paymentToken: String!
+}
+
+type OPMX_SetRouter {
+  id: ID!
+  router: String!
+}
+
+type OPMX_SetTwapSeconds {
+  id: ID!
+  twapSeconds: BigInt!
+}
+
+type OPMX_SetVeMaxDiscount {
+  id: ID!
+  veMaxDiscount: BigInt!
+}
+
+type OPMX_SetVeMinDiscount {
+  id: ID!
+  veMinDiscount: BigInt!
+}
+
+type OPMX_ToggleExternalOption {
+  id: ID!
+  option: String!
+  enabled: Boolean!
+}
+
+type OPMX_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
+
+type PMX_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type PMX_EIP712DomainChanged {
+  id: ID!
+}
+
+type PMX_OwnershipTransferStarted {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type PMX_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type PMX_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
+
