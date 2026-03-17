@@ -265,7 +265,7 @@ VoterV5.GaugeCreated.handler(async ({ event, context }) => {
   };
 
   context.GaugeStats.set(gaugeStats); 
-});
+}); 
 
 VoterV5.GaugeKilled.handler(async ({ event, context }) => {
   const entity: VoterV5_GaugeKilled = {
