@@ -270,7 +270,7 @@ VoterV5.GaugeCreated.handler(async ({ event, context }) => {
 VoterV5.GaugeKilled.handler(async ({ event, context }) => {
   const entity: VoterV5_GaugeKilled = {
     id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
-    gauge: event.params.gauge,
+    gauge: event.params.gauge, 
   };
 
   context.VoterV5_GaugeKilled.set(entity);
